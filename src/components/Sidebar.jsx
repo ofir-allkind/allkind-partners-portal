@@ -3,11 +3,11 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronRight, ChevronLeft, Menu, LogOut } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Menu, LogOut, LayoutDashboard } from 'lucide-react';
 import { useSidebar } from './SidebarProvider';
 
 const mainLinks = [
-  { label: 'Dashboard', href: '#', active: true },
+  { label: 'Dashboard', href: '#', active: true, icon: LayoutDashboard },
 ];
 
 const appLinks = [
@@ -76,10 +76,13 @@ export default function Sidebar() {
               >
                 {isCollapsed ? (
                   <div className="w-4 h-4 bg-gray-300 rounded flex items-center justify-center">
-                    <span className="text-xs">D</span>
+                    <link.icon className="w-3 h-3 text-gray-600" />
                   </div>
                 ) : (
-                  link.label
+                  <>
+                    <link.icon className="w-4 h-4 mr-3" />
+                    {link.label}
+                  </>
                 )}
               </a>
             ))}
