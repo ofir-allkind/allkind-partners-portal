@@ -1,8 +1,7 @@
 import React from 'react';
-import { LayoutDashboard } from 'lucide-react';
 
 const mainLinks = [
-  { label: 'Dashboard', icon: LayoutDashboard, href: '#' },
+  { label: 'Dashboard', href: '#' },
 ];
 
 export default function Sidebar() {
@@ -11,28 +10,21 @@ export default function Sidebar() {
       {/* Logo Section */}
       <div className="h-16 flex items-center px-6 border-b border-gray-100">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">A</span>
-          </div>
           <span className="text-xl font-semibold text-gray-900 tracking-widest">ALLKIND</span>
         </div>
       </div>
       {/* Main Navigation */}
       <nav className="flex-1 overflow-y-auto px-4 py-6 flex flex-col gap-8">
         <div>
-          {mainLinks.map((link) => {
-            const Icon = link.icon;
-            return (
-              <a
-                key={link.label}
-                href={link.href}
-                className="flex items-center gap-3 px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 font-medium transition-colors mb-1"
-              >
-                <Icon className="w-5 h-5" />
-                <span>{link.label}</span>
-              </a>
-            );
-          })}
+          {mainLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="flex items-center gap-3 px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 font-medium transition-colors mb-1"
+            >
+              <span>{link.label}</span>
+            </a>
+          ))}
         </div>
       </nav>
       {/* Footer/Logout */}
