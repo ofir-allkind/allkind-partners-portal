@@ -120,8 +120,10 @@ export default function ContractPage({ params }) {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Contract Details</h3>
               <p className="text-gray-600">View and manage contract information and settings</p>
             </div>
+            
+            {/* Contract Section */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Contract Details</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Contract Section</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-600">Status</span>
@@ -137,6 +139,64 @@ export default function ContractPage({ params }) {
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-600">End Date</span>
                   <span className="text-sm font-medium text-gray-900">{contract.details.endDate}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Title</span>
+                  <span className="text-sm font-medium text-gray-900">{contract.title}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">References</span>
+                  <span className="text-sm font-medium text-gray-900">REF-{params.id.toUpperCase()}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Allkind Section */}
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Allkind Section</h3>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Allkind Account Manager</span>
+                  <span className="text-sm font-medium text-gray-900">Sarah Johnson</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Amount Goal</span>
+                  <span className="text-sm font-medium text-gray-900">$50,000</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Timeline</span>
+                  <span className="text-sm font-medium text-gray-900">12 months</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Request Details</span>
+                  <span className="text-sm font-medium text-gray-900">Surrogacy matching services</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Billing Section */}
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Billing Section</h3>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Total Contract Value</span>
+                  <span className="text-sm font-medium text-gray-900">$50,000</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Paid</span>
+                  <span className="text-sm font-medium text-green-600">$15,000</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Pending Net 30</span>
+                  <span className="text-sm font-medium text-orange-600">$8,500</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Credit Value</span>
+                  <span className="text-sm font-medium text-blue-600">$2,000</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Balance</span>
+                  <span className="text-sm font-medium text-gray-900">$24,500</span>
                 </div>
               </div>
             </div>
