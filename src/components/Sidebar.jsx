@@ -3,11 +3,12 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronRight, ChevronLeft, Menu, LogOut, LayoutDashboard } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Menu, LogOut, LayoutDashboard, Contact } from 'lucide-react';
 import { useSidebar } from './SidebarProvider';
 
 const mainLinks = [
   { label: 'Dashboard', href: '#', active: true, icon: LayoutDashboard },
+  { label: 'Contact us', href: '#', icon: Contact },
 ];
 
 const appLinks = [
@@ -15,7 +16,7 @@ const appLinks = [
 ];
 
 const otherLinks = [
-  // Example: { label: 'Payment', href: '#' },
+  { label: 'Contact us', href: '#', icon: Contact },
 ];
 
 export default function Sidebar() {
@@ -104,32 +105,6 @@ export default function Sidebar() {
                     {isCollapsed ? (
                       <div className="w-4 h-4 bg-gray-300 rounded flex items-center justify-center">
                         <span className="text-xs">A</span>
-                      </div>
-                    ) : (
-                      link.label
-                    )}
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {otherLinks.length > 0 && (
-            <div>
-              {!isCollapsed && (
-                <div className="text-xs text-gray-400 font-semibold px-4 mb-2 tracking-widest uppercase">Others</div>
-              )}
-              <div className="flex flex-col gap-1">
-                {otherLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="flex items-center px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-                    title={isCollapsed ? link.label : undefined}
-                  >
-                    {isCollapsed ? (
-                      <div className="w-4 h-4 bg-gray-300 rounded flex items-center justify-center">
-                        <span className="text-xs">O</span>
                       </div>
                     ) : (
                       link.label
