@@ -6,7 +6,7 @@ export default function Home() {
   const greeting = hour < 12 ? "Good morning" : "Good evening";
 
   return (
-    <div className="p-8">
+    <div className="px-8 py-8" style={{ paddingTop: 0 }}>
       <h1 className="text-2xl font-semibold text-gray-900">
         {greeting} {name}
       </h1>

@@ -19,12 +19,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ margin: 0, padding: 0 }}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ margin: 0, padding: 0, overflow: 'hidden' }}
       >
         <Sidebar />
-        <main className="bg-gray-50 min-h-screen" style={{ marginLeft: '256px' }}>
+        <main className="bg-gray-50 min-h-screen" style={{ marginLeft: '256px', marginTop: 0, paddingTop: 0 }}>
           {children}
         </main>
       </body>
