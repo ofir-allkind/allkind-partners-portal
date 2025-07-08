@@ -28,22 +28,14 @@ const ContractCard = ({ title, description, id }) => {
       onClick={handleCardClick}
     >
       <div className="space-y-4">
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
-          <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
-        </div>
-        
-        <div className="flex space-x-3">
-          <button 
-            onClick={handlePipelineClick}
-            className="flex items-center justify-center px-4 py-2 bg-white border border-blue-500 text-blue-600 rounded-full hover:bg-blue-50 hover:border-blue-600 hover:text-blue-700 transition-all duration-200 text-sm font-medium shadow"
-          >
-            <ArrowRight className="w-4 h-4 mr-2 text-blue-500" />
-            Pipeline
-          </button>
+        <div className="flex items-center justify-between w-full mb-2">
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-1">{title}</h3>
+            <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+          </div>
           <button 
             onClick={handleDiscoverClick}
-            className="flex items-center justify-center px-4 py-2 bg-gradient-to-tr from-[#ffe084] via-[#ff7eb3] to-[#c9c6ff] text-white rounded-full hover:brightness-105 transition-all duration-200 text-sm font-medium border-0 shadow"
+            className="flex items-center justify-center px-4 py-2 bg-gradient-to-tr from-[#ffe084] via-[#ff7eb3] to-[#c9c6ff] text-white rounded-full hover:brightness-105 transition-all duration-200 text-sm font-medium border-0 shadow ml-4"
           >
             <Sparkles className="w-4 h-4 mr-2 text-white" />
             Discover
