@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Statistics from "@/components/Statistics";
+import ContractsList from "@/components/ContractsList";
 
 export default function Home() {
   const name = "Amy Boardman";
@@ -12,7 +13,10 @@ export default function Home() {
         {greeting} {name}
       </h1>
       
-      <Statistics />
+      <div className="space-y-8">
+        <Statistics />
+        <ContractsList />
+      </div>
     </div>
   );
 }
