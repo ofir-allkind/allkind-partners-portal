@@ -1,41 +1,33 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Sidebar from "@/components/Sidebar";
-import MainContent from "@/components/MainContent";
-import SidebarProvider from "@/components/SidebarProvider";
+import './globals.css'
+import { Inter } from 'next/font/google'
+import Sidebar from '../components/Sidebar'
+import MainContent from '../components/MainContent'
+import SidebarProvider from '../components/SidebarProvider'
+import Footer from '../components/Footer'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: "Allkind",
-  description: "Allkind",
-  icons: {
-    icon: '/favicon.png',
-  },
-};
+  title: 'Allkind',
+  description: 'Allkind Partners Portal',
+}
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" style={{ margin: 0, padding: 0 }}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ margin: 0, padding: 0, overflow: 'hidden' }}
-      >
+    <html lang="en">
+      <body className={inter.className}>
         <SidebarProvider>
-          <Sidebar />
-          <MainContent>
-            {children}
-          </MainContent>
+          <div className="flex flex-col min-h-screen">
+            <div className="flex flex-1">
+              <Sidebar />
+              <MainContent>
+                {children}
+              </MainContent>
+            </div>
+            <Footer />
+          </div>
         </SidebarProvider>
       </body>
     </html>
-  );
+  )
 }
