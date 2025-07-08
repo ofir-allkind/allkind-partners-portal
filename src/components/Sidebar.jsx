@@ -5,10 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight, ChevronLeft, Menu, LogOut, LayoutDashboard, Contact } from 'lucide-react';
 import { useSidebar } from './SidebarProvider';
+import { useChat } from './ChatProvider';
 
 const mainLinks = [
-  { label: 'Dashboard', href: '#', active: true, icon: LayoutDashboard },
-  { label: 'Contact us', href: '#', icon: Contact },
+  { label: 'Dashboard', href: '/', active: true, icon: LayoutDashboard },
+  { label: 'Contact us', href: null, icon: Contact, action: 'chat' },
 ];
 
 const appLinks = [
@@ -21,6 +22,7 @@ const otherLinks = [
 
 export default function Sidebar() {
   const { isCollapsed, sidebarWidth, toggleSidebar } = useSidebar();
+  const { openChat } = useChat();
   const [showSignOutPopup, setShowSignOutPopup] = useState(false);
 
   const handleAvatarClick = () => {
@@ -66,27 +68,51 @@ export default function Sidebar() {
         {/* Main Navigation */}
         <nav className="flex-1 overflow-y-auto px-4 py-6 flex flex-col gap-8">
           <div className="flex flex-col gap-1">
-            {mainLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className={`flex items-center px-4 py-2 rounded-lg font-medium text-gray-700 transition-colors ${
-                  link.active ? 'bg-gray-100 text-gray-900 shadow-sm' : 'hover:bg-gray-50'
-                }`}
-                title={isCollapsed ? link.label : undefined}
-              >
-                {isCollapsed ? (
-                  <div className="w-4 h-4 bg-gray-300 rounded flex items-center justify-center">
-                    <link.icon className="w-3 h-3 text-gray-600" />
-                  </div>
-                ) : (
-                  <>
-                    <link.icon className="w-4 h-4 mr-3" />
-                    {link.label}
-                  </>
-                )}
-              </a>
-            ))}
+            {mainLinks.map((link) => {
+              if (link.action === 'chat') {
+                return (
+                  <button
+                    key={link.label}
+                    onClick={openChat}
+                    className="flex items-center px-4 py-2 rounded-lg font-medium text-gray-700 transition-colors hover:bg-gray-50 w-full text-left"
+                    title={isCollapsed ? link.label : undefined}
+                  >
+                    {isCollapsed ? (
+                      <div className="w-4 h-4 bg-gray-300 rounded flex items-center justify-center">
+                        <link.icon className="w-3 h-3 text-gray-600" />
+                      </div>
+                    ) : (
+                      <>
+                        <link.icon className="w-4 h-4 mr-3" />
+                        {link.label}
+                      </>
+                    )}
+                  </button>
+                );
+              }
+              
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`flex items-center px-4 py-2 rounded-lg font-medium text-gray-700 transition-colors ${
+                    link.active ? 'bg-gray-100 text-gray-900 shadow-sm' : 'hover:bg-gray-50'
+                  }`}
+                  title={isCollapsed ? link.label : undefined}
+                >
+                  {isCollapsed ? (
+                    <div className="w-4 h-4 bg-gray-300 rounded flex items-center justify-center">
+                      <link.icon className="w-3 h-3 text-gray-600" />
+                    </div>
+                  ) : (
+                    <>
+                      <link.icon className="w-4 h-4 mr-3" />
+                      {link.label}
+                    </>
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
           {appLinks.length > 0 && (

@@ -5,6 +5,7 @@ import MainContent from '../components/MainContent'
 import SidebarProvider from '../components/SidebarProvider'
 import Footer from '../components/Footer'
 import ChatButton from '../components/ChatButton'
+import ChatProvider from '../components/ChatProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,16 +22,18 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className}>
         <SidebarProvider>
-          <div className="flex flex-col min-h-screen">
-            <div className="flex flex-1 relative">
-              <Sidebar />
-              <MainContent>
-                {children}
-              </MainContent>
+          <ChatProvider>
+            <div className="flex flex-col min-h-screen">
+              <div className="flex flex-1 relative">
+                <Sidebar />
+                <MainContent>
+                  {children}
+                </MainContent>
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
-          <ChatButton />
+            <ChatButton />
+          </ChatProvider>
         </SidebarProvider>
       </body>
     </html>

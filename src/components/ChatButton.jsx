@@ -2,9 +2,10 @@
 
 import React, { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
+import { useChat } from './ChatProvider';
 
 export default function ChatButton() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isChatOpen, toggleChat, closeChat } = useChat();
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
@@ -22,11 +23,11 @@ export default function ChatButton() {
       <div className="fixed bottom-6 right-6 z-50">
         {/* Chat Button */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={toggleChat}
           className="w-14 h-14 bg-white hover:bg-gray-50 text-black rounded-full shadow-lg hover:shadow-2xl transition-all duration-200 flex items-center justify-center border border-gray-200"
           aria-label="Open chat"
         >
-          {isOpen ? (
+          {isChatOpen ? (
             <X className="w-6 h-6" />
           ) : (
             <MessageCircle className="w-6 h-6" />
@@ -34,7 +35,7 @@ export default function ChatButton() {
         </button>
 
         {/* Chat Window */}
-        {isOpen && (
+        {isChatOpen && (
           <div className="absolute bottom-16 right-0 w-80 h-96 bg-white rounded-lg shadow-2xl border border-gray-200 flex flex-col">
             {/* Header */}
             <div className="bg-white text-black px-4 py-3 rounded-t-lg flex items-center justify-between border-b border-gray-200">
@@ -43,7 +44,7 @@ export default function ChatButton() {
                 <p className="text-xs text-gray-600">We typically reply in a few minutes</p>
               </div>
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={closeChat}
                 className="text-black hover:text-gray-600 transition-colors"
               >
                 <X className="w-4 h-4" />
