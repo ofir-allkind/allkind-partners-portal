@@ -4,6 +4,7 @@ import Sidebar from '../components/Sidebar'
 import MainContent from '../components/MainContent'
 import SidebarProvider from '../components/SidebarProvider'
 import Footer from '../components/Footer'
+import ChatButton from '../components/ChatButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
             </div>
             <Footer />
           </div>
+          <ChatButton />
         </SidebarProvider>
       </body>
     </html>
