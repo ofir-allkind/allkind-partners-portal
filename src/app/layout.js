@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <SidebarProvider>
           <div className="flex flex-col min-h-screen">
-            <div className="flex flex-1">
+            <div className="flex flex-1 relative">
               <Sidebar />
               <MainContent>
                 {children}
