@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowRight, Search } from 'lucide-react';
+import { ArrowRight, Search, Sparkles } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 const ContractCard = ({ title, description, id }) => {
@@ -36,16 +36,16 @@ const ContractCard = ({ title, description, id }) => {
         <div className="flex space-x-3">
           <button 
             onClick={handlePipelineClick}
-            className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-all duration-200 text-sm font-medium"
+            className="flex items-center justify-center px-4 py-2 bg-white border border-blue-500 text-blue-600 rounded-full hover:bg-blue-50 hover:border-blue-600 hover:text-blue-700 transition-all duration-200 text-sm font-medium shadow"
           >
-            <ArrowRight className="w-4 h-4 mr-2" />
+            <ArrowRight className="w-4 h-4 mr-2 text-blue-500" />
             Pipeline
           </button>
           <button 
             onClick={handleDiscoverClick}
-            className="flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-all duration-200 text-sm font-medium"
+            className="flex items-center justify-center px-4 py-2 bg-gradient-to-tr from-[#ffe084] via-[#ff7eb3] to-[#c9c6ff] text-white rounded-full hover:brightness-105 transition-all duration-200 text-sm font-medium border-0 shadow"
           >
-            <Search className="w-4 h-4 mr-2" />
+            <Sparkles className="w-4 h-4 mr-2 text-white" />
             Discover
           </button>
         </div>
@@ -84,7 +84,7 @@ export default function ContractsList() {
         <h2 className="text-2xl font-bold text-gray-900">Contracts</h2>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6">
         {contracts.map((contract, index) => (
           <ContractCard key={index} {...contract} />
         ))}
