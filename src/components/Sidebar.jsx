@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ChevronRight, ChevronLeft, Menu } from 'lucide-react';
 import { useSidebar } from './SidebarProvider';
 
@@ -44,7 +45,9 @@ export default function Sidebar() {
               <span className="text-xs font-bold text-gray-600">A</span>
             </div>
           ) : (
-            <Image src="/logo.png" alt="Allkind logo" width={120} height={40} className="object-contain" priority />
+            <Link href="/">
+              <Image src="/logo.png" alt="Allkind logo" width={120} height={40} className="object-contain cursor-pointer" priority />
+            </Link>
           )}
         </div>
 
