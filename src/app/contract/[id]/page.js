@@ -719,24 +719,11 @@ export default function ContractPage({ params }) {
         </button>
         
         {/* Statistics in Header */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold text-gray-900">Statistics</h2>
-            <span className="text-sm text-gray-500">{contract.details.endDate}</span>
-          </div>
-          <div className="grid grid-cols-3 gap-6">
-            <div className="text-center">
-              <p className="text-sm text-gray-600 mb-1">Total Candidates</p>
-              <p className="text-2xl font-bold text-gray-900">{contract.details.totalCandidates}</p>
-            </div>
-            <div className="text-center">
-              <p className="text-sm text-gray-600 mb-1">Active Candidates</p>
-              <p className="text-2xl font-bold text-blue-600">{contract.details.activeCandidates}</p>
-            </div>
-            <div className="text-center">
-              <p className="text-sm text-gray-600 mb-1">Completed Matches</p>
-              <p className="text-2xl font-bold text-green-600">{contract.details.completedMatches}</p>
-            </div>
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex items-center justify-center">
+          <div className="text-center">
+            <p className="text-lg font-medium text-gray-900">
+              Candidates Accepted 37 | Progress Towards Goal 82.22%
+            </p>
           </div>
         </div>
       </div>
