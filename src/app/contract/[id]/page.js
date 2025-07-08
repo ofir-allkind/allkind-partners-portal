@@ -1,11 +1,12 @@
 "use client";
 
-import React from 'react';
-import { ArrowLeft, Calendar, Users, FileText, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowLeft, Calendar, Users, FileText, CheckCircle, Clock, Award, Share2, Settings } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export default function ContractPage({ params }) {
   const router = useRouter();
+  const [activeTab, setActiveTab] = useState('pending');
   
   // Contract data based on ID
   const contracts = {
@@ -19,21 +20,7 @@ export default function ContractPage({ params }) {
         totalCandidates: 156,
         activeCandidates: 89,
         completedMatches: 67
-      },
-      sections: [
-        {
-          title: "Contract Overview",
-          content: "This contract establishes the framework for our comprehensive fertility services, ensuring quality care and meaningful connections throughout the journey."
-        },
-        {
-          title: "Service Scope",
-          content: "Includes full-cycle fertility support, candidate screening, matching services, and ongoing support throughout the process."
-        },
-        {
-          title: "Terms & Conditions",
-          content: "All services are provided in accordance with state and federal regulations, with full compliance to fertility industry standards."
-        }
-      ]
+      }
     },
     'surrogates': {
       title: "Surrogates Contract",
@@ -45,21 +32,7 @@ export default function ContractPage({ params }) {
         totalCandidates: 89,
         activeCandidates: 45,
         completedMatches: 44
-      },
-      sections: [
-        {
-          title: "Surrogacy Services",
-          content: "Comprehensive surrogacy matching and support services, including medical screening, legal coordination, and ongoing care."
-        },
-        {
-          title: "Candidate Requirements",
-          content: "All surrogate candidates undergo thorough medical and psychological screening to ensure the highest standards of care."
-        },
-        {
-          title: "Support Services",
-          content: "24/7 support for both intended parents and surrogates throughout the entire surrogacy journey."
-        }
-      ]
+      }
     },
     'egg-donors-ny': {
       title: "Egg Donors in NY Contract",
@@ -71,21 +44,7 @@ export default function ContractPage({ params }) {
         totalCandidates: 234,
         activeCandidates: 178,
         completedMatches: 56
-      },
-      sections: [
-        {
-          title: "NY Egg Donor Program",
-          content: "Specialized egg donor services in New York, with comprehensive screening and matching for intended parents."
-        },
-        {
-          title: "Donor Screening",
-          content: "Rigorous medical and genetic screening for all egg donors, ensuring the highest quality standards."
-        },
-        {
-          title: "Legal Compliance",
-          content: "Full compliance with New York state regulations for egg donation services."
-        }
-      ]
+      }
     },
     'tom-jane-ip': {
       title: "Tom and Jane IP Contract",
@@ -97,25 +56,112 @@ export default function ContractPage({ params }) {
         totalCandidates: 67,
         activeCandidates: 23,
         completedMatches: 44
-      },
-      sections: [
-        {
-          title: "Intended Parent Services",
-          content: "Personalized fertility services for intended parents, including comprehensive support and guidance."
-        },
-        {
-          title: "Matching Process",
-          content: "Careful matching process to ensure compatibility between intended parents and candidates."
-        },
-        {
-          title: "Ongoing Support",
-          content: "Continuous support throughout the entire fertility journey, from initial consultation to successful completion."
-        }
-      ]
+      }
     }
   };
 
   const contract = contracts[params.id] || contracts['main'];
+
+  const tabs = [
+    { id: 'pending', label: 'Pending Candidates', icon: Clock },
+    { id: 'accepted', label: 'Accepted Candidates', icon: CheckCircle },
+    { id: 'cleared', label: 'Cleared Candidates', icon: Award },
+    { id: 'shared', label: 'Shared Profiles', icon: Share2 },
+    { id: 'details', label: 'Contract Details', icon: Settings }
+  ];
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 'pending':
+        return (
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-semibold text-gray-900">Pending Candidates</h3>
+              <span className="text-sm text-gray-500">12 candidates</span>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-8 text-center">
+              <Clock className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+              <p className="text-gray-600">No pending candidates at the moment</p>
+              <p className="text-sm text-gray-500 mt-2">Candidates will appear here when they are submitted for review</p>
+            </div>
+          </div>
+        );
+      
+      case 'accepted':
+        return (
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-semibold text-gray-900">Accepted Candidates</h3>
+              <span className="text-sm text-gray-500">27 candidates</span>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-8 text-center">
+              <CheckCircle className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+              <p className="text-gray-600">No accepted candidates to display</p>
+              <p className="text-sm text-gray-500 mt-2">Accepted candidates will appear here</p>
+            </div>
+          </div>
+        );
+      
+      case 'cleared':
+        return (
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-semibold text-gray-900">Cleared Candidates</h3>
+              <span className="text-sm text-gray-500">42 candidates</span>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-8 text-center">
+              <Award className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+              <p className="text-gray-600">No cleared candidates to display</p>
+              <p className="text-sm text-gray-500 mt-2">Cleared candidates will appear here</p>
+            </div>
+          </div>
+        );
+      
+      case 'shared':
+        return (
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-semibold text-gray-900">Shared Profiles</h3>
+              <span className="text-sm text-gray-500">8 profiles</span>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-8 text-center">
+              <Share2 className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+              <p className="text-gray-600">No shared profiles to display</p>
+              <p className="text-sm text-gray-500 mt-2">Shared profiles will appear here</p>
+            </div>
+          </div>
+        );
+      
+      case 'details':
+        return (
+          <div className="space-y-6">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Contract Details</h3>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Status</span>
+                  <span className="flex items-center text-sm font-medium text-green-600">
+                    <CheckCircle className="w-4 h-4 mr-1" />
+                    {contract.details.status}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Start Date</span>
+                  <span className="text-sm font-medium text-gray-900">{contract.details.startDate}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">End Date</span>
+                  <span className="text-sm font-medium text-gray-900">{contract.details.endDate}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className="px-8 py-8">
@@ -123,85 +169,63 @@ export default function ContractPage({ params }) {
       <div className="mb-8">
         <button 
           onClick={() => router.back()}
-          className="flex items-center text-gray-600 hover:text-gray-900 mb-4 transition-colors"
+          className="flex items-center text-gray-600 hover:text-gray-900 transition-colors mb-6"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Contracts
         </button>
-        <h1 className="text-3xl font-bold text-gray-900">{contract.title}</h1>
-        <p className="text-lg text-gray-600 mt-2">{contract.description}</p>
+        
+        {/* Statistics in Header */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-semibold text-gray-900">Statistics</h2>
+            <span className="text-sm text-gray-500">{contract.details.endDate}</span>
+          </div>
+          <div className="grid grid-cols-3 gap-6">
+            <div className="text-center">
+              <p className="text-sm text-gray-600 mb-1">Total Candidates</p>
+              <p className="text-2xl font-bold text-gray-900">{contract.details.totalCandidates}</p>
+            </div>
+            <div className="text-center">
+              <p className="text-sm text-gray-600 mb-1">Active Candidates</p>
+              <p className="text-2xl font-bold text-blue-600">{contract.details.activeCandidates}</p>
+            </div>
+            <div className="text-center">
+              <p className="text-sm text-gray-600 mb-1">Completed Matches</p>
+              <p className="text-2xl font-bold text-green-600">{contract.details.completedMatches}</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Main Content */}
-        <div className="lg:col-span-2 space-y-6">
-          {contract.sections.map((section, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{section.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{section.content}</p>
-            </div>
-          ))}
+      {/* Tabs */}
+      <div className="mb-6">
+        <div className="border-b border-gray-200">
+          <nav className="flex space-x-8">
+            {tabs.map((tab) => {
+              const Icon = tab.icon;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
+                    activeTab === tab.id
+                      ? 'border-blue-500 text-blue-600'
+                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  }`}
+                >
+                  <Icon className="w-4 h-4" />
+                  <span>{tab.label}</span>
+                </button>
+              );
+            })}
+          </nav>
         </div>
+      </div>
 
-        {/* Sidebar */}
-        <div className="space-y-6">
-          {/* Contract Details */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Contract Details</h3>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Status</span>
-                <span className="flex items-center text-sm font-medium text-green-600">
-                  <CheckCircle className="w-4 h-4 mr-1" />
-                  {contract.details.status}
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Start Date</span>
-                <span className="text-sm font-medium text-gray-900">{contract.details.startDate}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">End Date</span>
-                <span className="text-sm font-medium text-gray-900">{contract.details.endDate}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Statistics */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Statistics</h3>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Total Candidates</span>
-                <span className="text-lg font-bold text-gray-900">{contract.details.totalCandidates}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Active Candidates</span>
-                <span className="text-lg font-bold text-blue-600">{contract.details.activeCandidates}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Completed Matches</span>
-                <span className="text-lg font-bold text-green-600">{contract.details.completedMatches}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Actions */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
-            <div className="space-y-3">
-              <button className="w-full flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
-                View Candidates
-              </button>
-              <button className="w-full flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-                Download Contract
-              </button>
-              <button className="w-full flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-                Edit Contract
-              </button>
-            </div>
-          </div>
-        </div>
+      {/* Tab Content */}
+      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+        {renderTabContent()}
       </div>
     </div>
   );
