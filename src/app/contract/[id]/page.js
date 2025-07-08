@@ -607,7 +607,10 @@ export default function ContractPage({ params }) {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Shared Profiles</h3>
               <p className="text-gray-600">Share access to view candidates of this contract. Note: it may take up to 15 minutes for a user to be created.</p>
             </div>
-
+            <div className="bg-gray-50 border border-dashed border-gray-300 rounded-xl p-8 text-center text-gray-500">
+              No shared profiles yet.<br />
+              <span className="text-sm">Invite a user to share access to this contract's candidates.</span>
+            </div>
           </div>
         );
       

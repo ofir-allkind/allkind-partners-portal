@@ -18,8 +18,7 @@ const ContractCard = ({ title, description, id }) => {
 
   const handleDiscoverClick = (e) => {
     e.stopPropagation();
-    // Add discover functionality here
-    console.log('Discover clicked for:', title);
+    router.push(`/contract/${id}/evaluate`);
   };
 
   return (
