@@ -26,10 +26,14 @@ export default function Sidebar() {
       {/* Toggle Button */}
       <button
         onClick={toggleSidebar}
-        className="fixed top-4 z-30 p-2 bg-white rounded-lg shadow-md border border-gray-200 hover:bg-gray-50 transition-all duration-300 ease-in-out"
-        style={{ left: isCollapsed ? '4px' : `${sidebarWidth - 44}px` }}
+        className="fixed top-4 z-30 p-2 text-gray-600 hover:text-gray-800 transition-all duration-300 ease-in-out"
+        style={{ left: isCollapsed ? '20px' : `${sidebarWidth - 44}px` }}
       >
-        <Menu className="w-4 h-4 text-gray-600" />
+        {isCollapsed ? (
+          <ChevronRight className="w-4 h-4" />
+        ) : (
+          <ChevronLeft className="w-4 h-4" />
+        )}
       </button>
 
       <aside
@@ -40,11 +44,7 @@ export default function Sidebar() {
       >
         {/* Logo Section */}
         <div className={`h-16 flex items-center ${isCollapsed ? 'px-4' : 'px-8'} border-b border-gray-100`}>
-          {isCollapsed ? (
-            <div className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center">
-              <span className="text-xs font-bold text-gray-600">A</span>
-            </div>
-          ) : (
+          {!isCollapsed && (
             <Link href="/">
               <Image src="/logo.png" alt="Allkind logo" width={120} height={40} className="object-contain cursor-pointer" priority />
             </Link>
