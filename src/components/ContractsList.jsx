@@ -2,44 +2,77 @@
 
 import React from 'react';
 import { ArrowRight, Search } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
-const ContractCard = ({ title, description }) => (
-  <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all duration-200">
-    <div className="space-y-4">
-      <div>
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
-        <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
-      </div>
-      
-      <div className="flex space-x-3">
-        <button className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-all duration-200 text-sm font-medium">
-          <ArrowRight className="w-4 h-4 mr-2" />
-          Pipeline
-        </button>
-        <button className="flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-all duration-200 text-sm font-medium">
-          <Search className="w-4 h-4 mr-2" />
-          Discover
-        </button>
+const ContractCard = ({ title, description, id }) => {
+  const router = useRouter();
+
+  const handleCardClick = () => {
+    router.push(`/contract/${id}`);
+  };
+
+  const handlePipelineClick = (e) => {
+    e.stopPropagation();
+    router.push(`/contract/${id}`);
+  };
+
+  const handleDiscoverClick = (e) => {
+    e.stopPropagation();
+    // Add discover functionality here
+    console.log('Discover clicked for:', title);
+  };
+
+  return (
+    <div 
+      className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all duration-200 cursor-pointer"
+      onClick={handleCardClick}
+    >
+      <div className="space-y-4">
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
+          <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+        </div>
+        
+        <div className="flex space-x-3">
+          <button 
+            onClick={handlePipelineClick}
+            className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-all duration-200 text-sm font-medium"
+          >
+            <ArrowRight className="w-4 h-4 mr-2" />
+            Pipeline
+          </button>
+          <button 
+            onClick={handleDiscoverClick}
+            className="flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-all duration-200 text-sm font-medium"
+          >
+            <Search className="w-4 h-4 mr-2" />
+            Discover
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default function ContractsList() {
   const contracts = [
     {
+      id: 'main',
       title: "Main Contract",
       description: "Empowering the future of fertility—one meaningful connection at a time."
     },
     {
+      id: 'surrogates',
       title: "Surrogates Contract",
       description: "Empowering the future of fertility—one meaningful connection at a time."
     },
     {
+      id: 'egg-donors-ny',
       title: "Egg Donors in NY Contract",
       description: "Empowering the future of fertility—one meaningful connection at a time."
     },
     {
+      id: 'tom-jane-ip',
       title: "Tom and Jane IP Contract",
       description: "Empowering the future of fertility—one meaningful connection at a time."
     }
