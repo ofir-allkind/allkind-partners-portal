@@ -28,19 +28,19 @@ const ContractCard = ({ title, description }) => (
 export default function ContractsList() {
   const contracts = [
     {
-      title: "Fairfax Main Contract",
+      title: "Main Contract",
       description: "Empowering the future of fertility—one meaningful connection at a time."
     },
     {
-      title: "Virginia Regional Contract",
+      title: "Surrogates Contract",
       description: "Empowering the future of fertility—one meaningful connection at a time."
     },
     {
-      title: "DC Metro Contract",
+      title: "Egg Donors in NY Contract",
       description: "Empowering the future of fertility—one meaningful connection at a time."
     },
     {
-      title: "Maryland State Contract",
+      title: "Tom and Jane IP Contract",
       description: "Empowering the future of fertility—one meaningful connection at a time."
     }
   ];
