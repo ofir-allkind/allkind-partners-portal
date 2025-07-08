@@ -1,9 +1,9 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronRight, ChevronLeft, Menu } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Menu, LogOut } from 'lucide-react';
 import { useSidebar } from './SidebarProvider';
 
 const mainLinks = [
@@ -20,6 +20,17 @@ const otherLinks = [
 
 export default function Sidebar() {
   const { isCollapsed, sidebarWidth, toggleSidebar } = useSidebar();
+  const [showSignOutPopup, setShowSignOutPopup] = useState(false);
+
+  const handleAvatarClick = () => {
+    setShowSignOutPopup(!showSignOutPopup);
+  };
+
+  const handleSignOut = () => {
+    // Add sign out logic here
+    console.log('Signing out...');
+    setShowSignOutPopup(false);
+  };
 
   return (
     <>
@@ -128,24 +139,43 @@ export default function Sidebar() {
         </nav>
 
         {/* User Profile Section */}
-        <div className="p-4 mt-auto">
+        <div className="p-4 mt-auto relative">
           {isCollapsed ? (
             <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
               <span className="text-xs font-medium text-gray-600">A</span>
             </div>
           ) : (
-            <button className="flex items-center w-full gap-1 h-7 px-1 py-0 rounded transition-colors group items-center min-h-0" style={{ backgroundColor: '#FCFBFE' }}>
-              <img
-                src="https://randomuser.me/api/portraits/women/44.jpg"
-                alt="User avatar"
-                className="w-3 h-3 rounded-full object-cover"
-              />
-              <div className="flex-1 flex flex-col items-start text-left leading-tight justify-center">
-                <span className="font-medium text-gray-900 text-[10px] leading-tight">Amy Boardman</span>
-                <span className="text-[8px] text-gray-500 leading-tight">admin@allkind.inc</span>
-              </div>
-              <ChevronRight className="w-3 h-3 text-gray-400 group-hover:text-gray-600" />
-            </button>
+            <>
+              <button 
+                onClick={handleAvatarClick}
+                className="flex items-center w-full gap-1 h-7 px-1 py-0 rounded transition-colors group items-center min-h-0" 
+                style={{ backgroundColor: '#FCFBFE' }}
+              >
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  alt="User avatar"
+                  className="w-3 h-3 rounded-full object-cover"
+                />
+                <div className="flex-1 flex flex-col items-start text-left leading-tight justify-center">
+                  <span className="font-medium text-gray-900 text-[10px] leading-tight">Amy Boardman</span>
+                  <span className="text-[8px] text-gray-500 leading-tight">admin@allkind.inc</span>
+                </div>
+                <ChevronRight className={`w-3 h-3 text-gray-400 group-hover:text-gray-600 transition-transform ${showSignOutPopup ? 'rotate-90' : ''}`} />
+              </button>
+              
+              {/* Sign Out Popup */}
+              {showSignOutPopup && (
+                <div className="absolute bottom-full left-0 right-0 mb-2 bg-white border border-gray-200 rounded-lg shadow-lg">
+                  <button 
+                    onClick={handleSignOut}
+                    className="flex items-center w-full gap-2 px-3 py-2 text-gray-700 hover:bg-gray-100 transition-colors text-sm font-medium"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    Sign out
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </div>
       </aside>
