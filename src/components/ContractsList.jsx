@@ -82,9 +82,6 @@ export default function ContractsList() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold text-gray-900">Contracts</h2>
-        <button className="text-blue-500 hover:text-blue-600 font-medium text-sm">
-          View All Contracts
-        </button>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
