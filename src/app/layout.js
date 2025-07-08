@@ -23,12 +23,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex">
-          <Sidebar />
-          <main className="flex-1 bg-gray-50 pl-64">
-            {children}
-          </main>
-        </div>
+        <Sidebar />
+        <main className="bg-gray-50 min-h-screen" style={{ marginLeft: '256px' }}>
+          {children}
+        </main>
       </body>
     </html>
   );

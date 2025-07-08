@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 
 const mainLinks = [
-  { label: 'Home', href: '#', active: true },
+  { label: 'Dashboard', href: '#', active: true },
 ];
 
 const appLinks = [
@@ -17,8 +17,8 @@ const otherLinks = [
 export default function Sidebar() {
   return (
     <aside
-      className="fixed top-0 left-0 h-screen w-64 z-20 border-r border-gray-200 flex flex-col shadow-sm overflow-y-auto max-h-screen"
-      style={{ backgroundColor: '#FCFBFE' }}
+      className="fixed top-0 left-0 h-screen w-64 z-20 border-r border-gray-200 flex flex-col shadow-sm overflow-y-auto"
+      style={{ backgroundColor: '#FCFBFE', height: '100vh' }}
     >
       {/* Logo Section */}
       <div className="h-16 flex items-center px-8 border-b border-gray-100">
