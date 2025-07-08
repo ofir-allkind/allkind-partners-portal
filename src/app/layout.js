@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "AllKind Partners Portal",
-  description: "AllKind Partners Portal",
+  title: "Allkind",
+  description: "Allkind",
   icons: {
     icon: '/favicon.png',
   },
