@@ -113,9 +113,11 @@ export default function ContractPage({ params }) {
                     <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-xs text-gray-600">JD</span>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face" 
+                            alt="Candidate" 
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -146,9 +148,11 @@ export default function ContractPage({ params }) {
                     <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-xs text-gray-600">SM</span>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face" 
+                            alt="Candidate" 
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -179,9 +183,11 @@ export default function ContractPage({ params }) {
                     <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-xs text-gray-600">AL</span>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=40&h=40&fit=crop&crop=face" 
+                            alt="Candidate" 
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -260,9 +266,11 @@ export default function ContractPage({ params }) {
                     <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-xs text-gray-600">MJ</span>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=40&h=40&fit=crop&crop=face" 
+                            alt="Candidate" 
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -292,9 +300,11 @@ export default function ContractPage({ params }) {
                     <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-xs text-gray-600">SD</span>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" 
+                            alt="Candidate" 
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -324,9 +334,11 @@ export default function ContractPage({ params }) {
                     <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-xs text-gray-600">RW</span>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=40&h=40&fit=crop&crop=face" 
+                            alt="Candidate" 
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -356,9 +368,11 @@ export default function ContractPage({ params }) {
                     <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-xs text-gray-600">LB</span>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=40&h=40&fit=crop&crop=face" 
+                            alt="Candidate" 
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -436,9 +450,11 @@ export default function ContractPage({ params }) {
                     <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-xs text-gray-600">EM</span>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face" 
+                            alt="Candidate" 
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -468,9 +484,11 @@ export default function ContractPage({ params }) {
                     <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-xs text-gray-600">AS</span>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=40&h=40&fit=crop&crop=face" 
+                            alt="Candidate" 
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -500,9 +518,11 @@ export default function ContractPage({ params }) {
                     <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-xs text-gray-600">JG</span>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face" 
+                            alt="Candidate" 
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -532,9 +552,11 @@ export default function ContractPage({ params }) {
                     <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-xs text-gray-600">KL</span>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face" 
+                            alt="Candidate" 
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -564,9 +586,11 @@ export default function ContractPage({ params }) {
                     <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-xs text-gray-600">NT</span>
-                          </div>
+                          <img 
+                            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=40&h=40&fit=crop&crop=face" 
+                            alt="Candidate" 
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
