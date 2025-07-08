@@ -85,7 +85,7 @@ export default function ContractPage({ params }) {
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead className="bg-gray-50 border-b border-gray-200">
-                    <tr>
+                    <tr className="divide-x divide-gray-200">
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Images
                       </th>
@@ -110,7 +110,7 @@ export default function ContractPage({ params }) {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
@@ -143,7 +143,7 @@ export default function ContractPage({ params }) {
                         </span>
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
@@ -176,7 +176,7 @@ export default function ContractPage({ params }) {
                         </span>
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
@@ -229,7 +229,7 @@ export default function ContractPage({ params }) {
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead className="bg-gray-50 border-b border-gray-200">
-                    <tr>
+                    <tr className="divide-x divide-gray-200">
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Images
                       </th>
@@ -257,7 +257,7 @@ export default function ContractPage({ params }) {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
@@ -289,7 +289,7 @@ export default function ContractPage({ params }) {
                         Jan 15, 2025 3:20 PM
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
@@ -321,7 +321,7 @@ export default function ContractPage({ params }) {
                         Jan 14, 2025 11:45 AM
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
@@ -353,7 +353,7 @@ export default function ContractPage({ params }) {
                         Jan 13, 2025 2:30 PM
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
@@ -405,7 +405,7 @@ export default function ContractPage({ params }) {
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead className="bg-gray-50 border-b border-gray-200">
-                    <tr>
+                    <tr className="divide-x divide-gray-200">
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Images
                       </th>
@@ -433,7 +433,7 @@ export default function ContractPage({ params }) {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
@@ -465,7 +465,7 @@ export default function ContractPage({ params }) {
                         Jan 15, 2025 1:30 PM
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
@@ -497,7 +497,7 @@ export default function ContractPage({ params }) {
                         Jan 14, 2025 4:45 PM
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
@@ -529,7 +529,7 @@ export default function ContractPage({ params }) {
                         Jan 13, 2025 10:20 AM
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
@@ -561,7 +561,7 @@ export default function ContractPage({ params }) {
                         Jan 12, 2025 2:15 PM
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-50 divide-x divide-gray-200">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
