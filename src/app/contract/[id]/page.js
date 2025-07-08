@@ -79,15 +79,6 @@ export default function ContractPage({ params }) {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Pending Candidates</h3>
               <p className="text-gray-600">Candidates pending final acceptance from Allkind or candidates with clarification requested</p>
             </div>
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-gray-900">Pending Candidates</h3>
-              <span className="text-sm text-gray-500">12 candidates</span>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-8 text-center">
-              <Clock className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-600">No pending candidates at the moment</p>
-              <p className="text-sm text-gray-500 mt-2">Candidates will appear here when they are submitted for review</p>
-            </div>
           </div>
         );
       
@@ -97,15 +88,6 @@ export default function ContractPage({ params }) {
             <div className="mb-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Accepted Candidates</h3>
               <p className="text-gray-600">Candidates accepted and undergoing the medical clearance process.</p>
-            </div>
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-gray-900">Accepted Candidates</h3>
-              <span className="text-sm text-gray-500">27 candidates</span>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-8 text-center">
-              <CheckCircle className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-600">No accepted candidates to display</p>
-              <p className="text-sm text-gray-500 mt-2">Accepted candidates will appear here</p>
             </div>
           </div>
         );
@@ -117,15 +99,6 @@ export default function ContractPage({ params }) {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Cleared Candidates</h3>
               <p className="text-gray-600">Candidates who passed medical clearance</p>
             </div>
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-gray-900">Cleared Candidates</h3>
-              <span className="text-sm text-gray-500">42 candidates</span>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-8 text-center">
-              <Award className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-600">No cleared candidates to display</p>
-              <p className="text-sm text-gray-500 mt-2">Cleared candidates will appear here</p>
-            </div>
           </div>
         );
       
@@ -136,15 +109,7 @@ export default function ContractPage({ params }) {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Shared Profiles</h3>
               <p className="text-gray-600">Share access to view candidates of this contract. Note: it may take up to 15 minutes for a user to be created.</p>
             </div>
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-gray-900">Shared Profiles</h3>
-              <span className="text-sm text-gray-500">8 profiles</span>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-8 text-center">
-              <Share2 className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-600">No shared profiles to display</p>
-              <p className="text-sm text-gray-500 mt-2">Shared profiles will appear here</p>
-            </div>
+
           </div>
         );
       
